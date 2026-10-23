@@ -1,0 +1,1660 @@
+{
+  "answerable_count": 8,
+  "unanswerable_count": 2,
+  "retrieval_modes": {
+    "lexical": {
+      "source_hits": 5,
+      "answerable_count": 8,
+      "seconds": 0.006349999981466681
+    },
+    "semantic": {
+      "source_hits": 8,
+      "answerable_count": 8,
+      "seconds": 0.3474936669517774
+    },
+    "hybrid": {
+      "source_hits": 8,
+      "answerable_count": 8,
+      "seconds": 0.3538436669332441
+    }
+  },
+  "embedding_model": {
+    "name": "qwen3-embedding:0.6b",
+    "digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+    "capabilities": [
+      "embedding",
+      "thinking",
+      "tools"
+    ],
+    "context_length": 32768
+  },
+  "answer_model": {
+    "name": "qwen3.5:4b",
+    "digest": "7f3251fa6878a78a606bcb3c074283306e5ad2ea411a7774a9dd98a4bc7f2d13",
+    "capabilities": [
+      "completion",
+      "thinking",
+      "tools",
+      "vision"
+    ],
+    "context_length": 262144
+  },
+  "file_hashes": {
+    "LICENSE.txt": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+    "README.rst": "e6c7aa25f5a857ce3b30c0b2a2d0d7a25bbf0f1c96d700e1bad2868c7ea231f5",
+    "flaskr/__init__.py": "cc44165ea4444bc114aedba76cf2f15451f182df97629317589d46902742f118",
+    "flaskr/auth.py": "a5ed5eaa05c6f6ee3e5bdb07b9e657a6e9320a115a68fd74b1cb4ac646680167",
+    "flaskr/blog.py": "c49c5f6e3db32d74bfac13633fd328ec904cb7159d76ca78f6956432076c1fd7",
+    "flaskr/db.py": "700f9d0a455bf79c9bf6de4f2784f13b96256faea19c15ddee71fb7957e14c31",
+    "flaskr/schema.sql": "c23021b8a5229cedd3191825850e963f393790a794d31ac2f83846a0c5d559f7",
+    "flaskr/static/style.css": "b7724c7981be21b5a13484c8f7eb9df306f06a88406db3dc7619b80aa040e372",
+    "flaskr/templates/auth/login.html": "f0d4ee341a19c8f9d51a66c5da624e687e58de7e3fb2ca41c6f5b8d07e20a6c1",
+    "flaskr/templates/auth/register.html": "53da308c1d62f057613ec8e445eb70e89404288f503156102d1e3e39ec5b2153",
+    "flaskr/templates/base.html": "a3c74c6ba8ae95bd3b4b63c0bcf5712944c5b954578514c1316a248db0949b07",
+    "flaskr/templates/blog/create.html": "f41e3166cfd09d41a88def1896fb93631e707b0d9968b14ccb00953263e20025",
+    "flaskr/templates/blog/index.html": "67cdf10979b06f697953477d0ee8043e56a11ebe87b03b307ada12d13a240617",
+    "flaskr/templates/blog/update.html": "0e16cd0d933914628e890411dcddd7527fb96b5a7c9113390d93b3e79b44b5ad",
+    "pyproject.toml": "1b2ff9761cb43059ed8df3f1c27d93cd93c3bf9297fe7fe5716da943a75012ac",
+    "tests/conftest.py": "2778b7c035d917bb0909ec6ee2f9d61ccba030ff8ae635ff65a52c133ec5afca",
+    "tests/data.sql": "244a542220a64bdbf9bd3340f8280551b95e6d3248ead974fdd0a07a7dd06a0c",
+    "tests/test_auth.py": "cbbe178c9980d8499561d8eae72f01b8abeead2fa10c9d5f71427da4af38a938",
+    "tests/test_blog.py": "a4c01c486e86aed522c3ade398bf4016f6ef59bbada2c7c5f69eb55ce297877c",
+    "tests/test_db.py": "324baea21b981575b4e6d92b6517f21ec2ad86a6138010863a9fcfb4f984e649",
+    "tests/test_factory.py": "1906cfed379afe315b6ad7db3c71c951ac87c53b57b28b04b5b6c84df2a79e01"
+  },
+  "limits": {
+    "max_files": 500,
+    "max_total_bytes": 5242880,
+    "max_file_bytes": 262144,
+    "max_snippets": 2000,
+    "chunk_lines": 60,
+    "chunk_chars": 4000,
+    "overlap_lines": 10
+  },
+  "created_at": "2026-10-22T17:37:01.389195+00:00",
+  "rubric": "All expected source-span lines in final context; manually correct and supported answers for Q1-Q8; explicit limitations and no invented runtime facts for Q9-Q10. Reference validation is structural, not an entailment score.",
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "Which function creates and configures the application?",
+      "expected_path": "flaskr/__init__.py",
+      "expected_start": 6,
+      "expected_end": 21,
+      "expected_facts": "create_app creates Flask and applies default and instance/test configuration.",
+      "retrieval": {
+        "lexical": {
+          "source_hit": false,
+          "seconds": 0.0010662499989848584,
+          "ranked_ids": [
+            6,
+            11,
+            4,
+            7,
+            12,
+            10,
+            9,
+            23,
+            2,
+            8
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "flaskr/db.py",
+              "start_line": 1,
+              "end_line": 56
+            },
+            {
+              "path": "flaskr/schema.sql",
+              "start_line": 1,
+              "end_line": 20
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 101,
+              "end_line": 125
+            }
+          ]
+        },
+        "semantic": {
+          "source_hit": true,
+          "seconds": 0.05173599999397993,
+          "ranked_ids": [
+            4,
+            31,
+            11,
+            23,
+            3,
+            2,
+            28,
+            30,
+            8,
+            12
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/__init__.py",
+              "start_line": 1,
+              "end_line": 48
+            },
+            {
+              "path": "tests/test_factory.py",
+              "start_line": 1,
+              "end_line": 12
+            },
+            {
+              "path": "flaskr/db.py",
+              "start_line": 1,
+              "end_line": 56
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 1,
+              "end_line": 60
+            }
+          ]
+        },
+        "hybrid": {
+          "source_hit": true,
+          "seconds": 0.05280224999296479,
+          "ranked_ids": [
+            4,
+            11,
+            23,
+            12,
+            2,
+            8,
+            6,
+            31,
+            7,
+            3,
+            10,
+            9,
+            28,
+            30
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/__init__.py",
+              "start_line": 1,
+              "end_line": 48
+            },
+            {
+              "path": "flaskr/db.py",
+              "start_line": 1,
+              "end_line": 56
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_factory.py",
+              "start_line": 1,
+              "end_line": 12
+            }
+          ]
+        }
+      },
+      "answer": {
+        "text": "create_app",
+        "insufficient_evidence": false,
+        "timings": {
+          "lexical_seconds": 0.0025862500187940896,
+          "semantic_seconds": 0.0764677079860121,
+          "generation_seconds": 5.179892333981115,
+          "total_seconds": 5.364849958976265
+        }
+      },
+      "sources": [
+        {
+          "source_id": "S1",
+          "path": "flaskr/__init__.py",
+          "start_line": 1,
+          "end_line": 48
+        }
+      ],
+      "answer_error": null,
+      "human_review": null,
+      "source_review": {
+        "reviewer": "Codex source inspection; not a human review",
+        "facts_match_expected": true,
+        "expected_span_in_displayed_sources": true,
+        "result": "pass",
+        "note": "Compared answer with expected facts and original source. No unsupported production fact."
+      }
+    },
+    {
+      "id": "Q2",
+      "question": "Where is `login_required` defined?",
+      "expected_path": "flaskr/auth.py",
+      "expected_start": 19,
+      "expected_end": 29,
+      "expected_facts": "The login_required decorator is defined in auth.py.",
+      "retrieval": {
+        "lexical": {
+          "source_hit": true,
+          "seconds": 0.0008811249863356352,
+          "ranked_ids": [
+            10,
+            9,
+            5,
+            8,
+            29,
+            26,
+            6,
+            28,
+            16,
+            7
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 101,
+              "end_line": 125
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/templates/auth/login.html",
+              "start_line": 1,
+              "end_line": 15
+            }
+          ]
+        },
+        "semantic": {
+          "source_hit": true,
+          "seconds": 0.03622245800215751,
+          "ranked_ids": [
+            5,
+            28,
+            26,
+            27,
+            24,
+            6,
+            7,
+            8,
+            2,
+            18
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_blog.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_auth.py",
+              "start_line": 51,
+              "end_line": 69
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 51,
+              "end_line": 62
+            }
+          ]
+        },
+        "hybrid": {
+          "source_hit": true,
+          "seconds": 0.037103582988493145,
+          "ranked_ids": [
+            5,
+            26,
+            28,
+            8,
+            6,
+            7,
+            10,
+            9,
+            27,
+            24,
+            29,
+            2,
+            16,
+            18
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 101,
+              "end_line": 116
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 51,
+              "end_line": 62
+            }
+          ]
+        }
+      },
+      "answer": {
+        "text": "`login_required` is defined in the file `flaskr/auth.py`.",
+        "insufficient_evidence": false,
+        "timings": {
+          "lexical_seconds": 0.0004792500112671405,
+          "semantic_seconds": 0.025788291008211672,
+          "generation_seconds": 5.054202874976909,
+          "total_seconds": 5.1561795419838745
+        }
+      },
+      "sources": [
+        {
+          "source_id": "S1",
+          "path": "flaskr/auth.py",
+          "start_line": 1,
+          "end_line": 60
+        }
+      ],
+      "answer_error": null,
+      "human_review": null,
+      "source_review": {
+        "reviewer": "Codex source inspection; not a human review",
+        "facts_match_expected": true,
+        "expected_span_in_displayed_sources": true,
+        "result": "pass",
+        "note": "Compared answer with expected facts and original source. No unsupported production fact."
+      }
+    },
+    {
+      "id": "Q3",
+      "question": "Where does registration hash a password before storing the user?",
+      "expected_path": "flaskr/auth.py",
+      "expected_start": 66,
+      "expected_end": 69,
+      "expected_facts": "register calls generate_password_hash(password) in the INSERT parameters.",
+      "retrieval": {
+        "lexical": {
+          "source_hit": false,
+          "seconds": 0.000592124997638166,
+          "ranked_ids": [
+            5,
+            26,
+            6,
+            2,
+            10,
+            9,
+            12,
+            27,
+            25,
+            28
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "README.rst",
+              "start_line": 1,
+              "end_line": 60
+            }
+          ]
+        },
+        "semantic": {
+          "source_hit": true,
+          "seconds": 0.041550292022293434,
+          "ranked_ids": [
+            6,
+            5,
+            25,
+            26,
+            17,
+            12,
+            27,
+            7,
+            28,
+            18
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/data.sql",
+              "start_line": 1,
+              "end_line": 8
+            },
+            {
+              "path": "flaskr/templates/auth/register.html",
+              "start_line": 1,
+              "end_line": 15
+            }
+          ]
+        },
+        "hybrid": {
+          "source_hit": true,
+          "seconds": 0.0421424170199316,
+          "ranked_ids": [
+            5,
+            6,
+            26,
+            25,
+            12,
+            27,
+            28,
+            2,
+            10,
+            17,
+            9,
+            7,
+            18
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "tests/data.sql",
+              "start_line": 1,
+              "end_line": 8
+            },
+            {
+              "path": "flaskr/schema.sql",
+              "start_line": 1,
+              "end_line": 20
+            }
+          ]
+        }
+      },
+      "answer": {
+        "text": "The password is hashed using `generate_password_hash(password)` before being stored in the database.",
+        "insufficient_evidence": false,
+        "timings": {
+          "lexical_seconds": 0.0008388340065721422,
+          "semantic_seconds": 0.027328374999342486,
+          "generation_seconds": 4.865445959003409,
+          "total_seconds": 4.969584875012515
+        }
+      },
+      "sources": [
+        {
+          "source_id": "S1",
+          "path": "flaskr/auth.py",
+          "start_line": 1,
+          "end_line": 60
+        },
+        {
+          "source_id": "S2",
+          "path": "flaskr/auth.py",
+          "start_line": 51,
+          "end_line": 110
+        }
+      ],
+      "answer_error": null,
+      "human_review": null,
+      "source_review": {
+        "reviewer": "Codex source inspection; not a human review",
+        "facts_match_expected": true,
+        "expected_span_in_displayed_sources": true,
+        "result": "pass",
+        "note": "Compared answer with expected facts and original source. No unsupported production fact."
+      }
+    },
+    {
+      "id": "Q4",
+      "question": "Where is a submitted login password checked against its stored hash?",
+      "expected_path": "flaskr/auth.py",
+      "expected_start": 96,
+      "expected_end": 99,
+      "expected_facts": "login calls check_password_hash(user[\"password\"], password).",
+      "retrieval": {
+        "lexical": {
+          "source_hit": true,
+          "seconds": 0.0005698750028386712,
+          "ranked_ids": [
+            5,
+            6,
+            7,
+            8,
+            1,
+            26,
+            10,
+            29,
+            9,
+            24
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 101,
+              "end_line": 125
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 51,
+              "end_line": 62
+            }
+          ]
+        },
+        "semantic": {
+          "source_hit": true,
+          "seconds": 0.03954654198605567,
+          "ranked_ids": [
+            6,
+            5,
+            27,
+            25,
+            26,
+            28,
+            16,
+            12,
+            7,
+            24
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_auth.py",
+              "start_line": 51,
+              "end_line": 69
+            },
+            {
+              "path": "tests/data.sql",
+              "start_line": 1,
+              "end_line": 8
+            }
+          ]
+        },
+        "hybrid": {
+          "source_hit": true,
+          "seconds": 0.04011641698889434,
+          "ranked_ids": [
+            5,
+            6,
+            26,
+            7,
+            24,
+            27,
+            8,
+            25,
+            1,
+            28,
+            10,
+            16,
+            12,
+            29,
+            9
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 51,
+              "end_line": 62
+            },
+            {
+              "path": "tests/test_auth.py",
+              "start_line": 51,
+              "end_line": 69
+            }
+          ]
+        }
+      },
+      "answer": {
+        "text": "In the `login` function within `flaskr/auth.py`, a submitted login password is checked against its stored hash using the `check_password_hash` function from `werkzeug.security`. Specifically, if a user record exists for the provided username, the code retrieves the stored password (`user[\"password\"]`) and compares it with the submitted password (`password`).",
+        "insufficient_evidence": false,
+        "timings": {
+          "lexical_seconds": 0.0007423329807352275,
+          "semantic_seconds": 0.026707917015301064,
+          "generation_seconds": 5.9768794999981765,
+          "total_seconds": 6.079822458996205
+        }
+      },
+      "sources": [
+        {
+          "source_id": "S1",
+          "path": "flaskr/auth.py",
+          "start_line": 1,
+          "end_line": 60
+        },
+        {
+          "source_id": "S2",
+          "path": "flaskr/auth.py",
+          "start_line": 51,
+          "end_line": 110
+        }
+      ],
+      "answer_error": null,
+      "human_review": null,
+      "source_review": {
+        "reviewer": "Codex source inspection; not a human review",
+        "facts_match_expected": true,
+        "expected_span_in_displayed_sources": true,
+        "result": "pass",
+        "note": "Compared answer with expected facts and original source. No unsupported production fact."
+      }
+    },
+    {
+      "id": "Q5",
+      "question": "Which guard is applied to the route that creates a blog post?",
+      "expected_path": "flaskr/blog.py",
+      "expected_start": 60,
+      "expected_end": 62,
+      "expected_facts": "The create route is decorated with @login_required.",
+      "retrieval": {
+        "lexical": {
+          "source_hit": false,
+          "seconds": 0.0010929999989457428,
+          "ranked_ids": [
+            6,
+            10,
+            8,
+            4,
+            5,
+            7,
+            9,
+            26,
+            1,
+            2
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 101,
+              "end_line": 125
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 1,
+              "end_line": 60
+            }
+          ]
+        },
+        "semantic": {
+          "source_hit": true,
+          "seconds": 0.04318820798653178,
+          "ranked_ids": [
+            8,
+            9,
+            20,
+            14,
+            2,
+            28,
+            10,
+            25,
+            21,
+            18
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "flaskr/templates/blog/index.html",
+              "start_line": 1,
+              "end_line": 28
+            },
+            {
+              "path": "tests/data.sql",
+              "start_line": 1,
+              "end_line": 8
+            }
+          ]
+        },
+        "hybrid": {
+          "source_hit": true,
+          "seconds": 0.04428120798547752,
+          "ranked_ids": [
+            8,
+            9,
+            10,
+            2,
+            6,
+            20,
+            4,
+            14,
+            5,
+            7,
+            28,
+            25,
+            26,
+            1,
+            21,
+            18
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 101,
+              "end_line": 125
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 101,
+              "end_line": 116
+            }
+          ]
+        }
+      },
+      "answer": {
+        "text": "@login_required",
+        "insufficient_evidence": false,
+        "timings": {
+          "lexical_seconds": 0.0005504590226337314,
+          "semantic_seconds": 0.02776691599865444,
+          "generation_seconds": 4.710608166002203,
+          "total_seconds": 4.814856917015277
+        }
+      },
+      "sources": [
+        {
+          "source_id": "S1",
+          "path": "flaskr/blog.py",
+          "start_line": 1,
+          "end_line": 60
+        }
+      ],
+      "answer_error": null,
+      "human_review": null,
+      "source_review": {
+        "reviewer": "Codex source inspection; not a human review",
+        "facts_match_expected": true,
+        "expected_span_in_displayed_sources": false,
+        "result": "fail",
+        "note": "Guard is on line 61; displayed cited snippet ends at line 60."
+      }
+    },
+    {
+      "id": "Q6",
+      "question": "How are posts ordered on the blog index page?",
+      "expected_path": "flaskr/blog.py",
+      "expected_start": 20,
+      "expected_end": 24,
+      "expected_facts": "ORDER BY created DESC, newest first.",
+      "retrieval": {
+        "lexical": {
+          "source_hit": true,
+          "seconds": 0.0005427089927252382,
+          "ranked_ids": [
+            20,
+            8,
+            2,
+            21,
+            1,
+            26,
+            6,
+            28,
+            5,
+            10
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/templates/blog/index.html",
+              "start_line": 1,
+              "end_line": 28
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "README.rst",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/templates/blog/update.html",
+              "start_line": 1,
+              "end_line": 19
+            }
+          ]
+        },
+        "semantic": {
+          "source_hit": true,
+          "seconds": 0.04284024998196401,
+          "ranked_ids": [
+            8,
+            20,
+            9,
+            28,
+            14,
+            29,
+            10,
+            18,
+            2,
+            12
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/templates/blog/index.html",
+              "start_line": 1,
+              "end_line": 28
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "flaskr/schema.sql",
+              "start_line": 1,
+              "end_line": 20
+            }
+          ]
+        },
+        "hybrid": {
+          "source_hit": true,
+          "seconds": 0.043382958974689245,
+          "ranked_ids": [
+            8,
+            20,
+            2,
+            28,
+            10,
+            9,
+            21,
+            1,
+            14,
+            26,
+            29,
+            6,
+            18,
+            5,
+            12
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/templates/blog/index.html",
+              "start_line": 1,
+              "end_line": 28
+            },
+            {
+              "path": "README.rst",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 101,
+              "end_line": 125
+            }
+          ]
+        }
+      },
+      "answer": {
+        "text": "Posts are ordered by the `created` timestamp in descending order (most recent first).",
+        "insufficient_evidence": false,
+        "timings": {
+          "lexical_seconds": 0.0005862919788341969,
+          "semantic_seconds": 0.026714083011029288,
+          "generation_seconds": 5.446016124973539,
+          "total_seconds": 5.549192500009667
+        }
+      },
+      "sources": [
+        {
+          "source_id": "S1",
+          "path": "flaskr/blog.py",
+          "start_line": 1,
+          "end_line": 60
+        }
+      ],
+      "answer_error": null,
+      "human_review": null,
+      "source_review": {
+        "reviewer": "Codex source inspection; not a human review",
+        "facts_match_expected": true,
+        "expected_span_in_displayed_sources": true,
+        "result": "pass",
+        "note": "Compared answer with expected facts and original source. No unsupported production fact."
+      }
+    },
+    {
+      "id": "Q7",
+      "question": "Which CLI command initializes the database?",
+      "expected_path": "flaskr/db.py",
+      "expected_start": 41,
+      "expected_end": 45,
+      "expected_facts": "init-db is the Click command implemented by init_db_command.",
+      "retrieval": {
+        "lexical": {
+          "source_hit": true,
+          "seconds": 0.0010052500001620501,
+          "ranked_ids": [
+            11,
+            23,
+            6,
+            30,
+            12,
+            26,
+            5,
+            4,
+            7,
+            10
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/db.py",
+              "start_line": 1,
+              "end_line": 56
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_db.py",
+              "start_line": 1,
+              "end_line": 29
+            },
+            {
+              "path": "flaskr/schema.sql",
+              "start_line": 1,
+              "end_line": 20
+            }
+          ]
+        },
+        "semantic": {
+          "source_hit": true,
+          "seconds": 0.05110529199009761,
+          "ranked_ids": [
+            30,
+            11,
+            12,
+            23,
+            2,
+            3,
+            28,
+            25,
+            6,
+            4
+          ],
+          "final_sources": [
+            {
+              "path": "tests/test_db.py",
+              "start_line": 1,
+              "end_line": 29
+            },
+            {
+              "path": "flaskr/db.py",
+              "start_line": 1,
+              "end_line": 56
+            },
+            {
+              "path": "flaskr/schema.sql",
+              "start_line": 1,
+              "end_line": 20
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 1,
+              "end_line": 60
+            }
+          ]
+        },
+        "hybrid": {
+          "source_hit": true,
+          "seconds": 0.05211054199025966,
+          "ranked_ids": [
+            11,
+            30,
+            23,
+            12,
+            6,
+            4,
+            2,
+            3,
+            26,
+            5,
+            28,
+            25,
+            7,
+            10
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/db.py",
+              "start_line": 1,
+              "end_line": 56
+            },
+            {
+              "path": "tests/test_db.py",
+              "start_line": 1,
+              "end_line": 29
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/schema.sql",
+              "start_line": 1,
+              "end_line": 20
+            }
+          ]
+        }
+      },
+      "answer": {
+        "text": "init-db",
+        "insufficient_evidence": false,
+        "timings": {
+          "lexical_seconds": 0.0005756250175181776,
+          "semantic_seconds": 0.02553625000291504,
+          "generation_seconds": 4.3263270830211695,
+          "total_seconds": 4.437818042002618
+        }
+      },
+      "sources": [
+        {
+          "source_id": "S1",
+          "path": "flaskr/db.py",
+          "start_line": 1,
+          "end_line": 56
+        },
+        {
+          "source_id": "S2",
+          "path": "tests/test_db.py",
+          "start_line": 1,
+          "end_line": 29
+        }
+      ],
+      "answer_error": null,
+      "human_review": null,
+      "source_review": {
+        "reviewer": "Codex source inspection; not a human review",
+        "facts_match_expected": true,
+        "expected_span_in_displayed_sources": true,
+        "result": "pass",
+        "note": "Compared answer with expected facts and original source. No unsupported production fact."
+      }
+    },
+    {
+      "id": "Q8",
+      "question": "Which tables does the SQL schema create?",
+      "expected_path": "flaskr/schema.sql",
+      "expected_start": 7,
+      "expected_end": 13,
+      "expected_facts": "The schema creates user and post.",
+      "retrieval": {
+        "lexical": {
+          "source_hit": true,
+          "seconds": 0.0005996660038363189,
+          "ranked_ids": [
+            12,
+            11,
+            6,
+            25,
+            23,
+            31,
+            19,
+            9,
+            20,
+            29
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/schema.sql",
+              "start_line": 1,
+              "end_line": 20
+            },
+            {
+              "path": "flaskr/db.py",
+              "start_line": 1,
+              "end_line": 56
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "tests/data.sql",
+              "start_line": 1,
+              "end_line": 8
+            }
+          ]
+        },
+        "semantic": {
+          "source_hit": true,
+          "seconds": 0.04130462498869747,
+          "ranked_ids": [
+            12,
+            11,
+            30,
+            25,
+            23,
+            28,
+            6,
+            8,
+            29,
+            2
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/schema.sql",
+              "start_line": 1,
+              "end_line": 20
+            },
+            {
+              "path": "flaskr/db.py",
+              "start_line": 1,
+              "end_line": 56
+            },
+            {
+              "path": "tests/test_db.py",
+              "start_line": 1,
+              "end_line": 29
+            },
+            {
+              "path": "tests/data.sql",
+              "start_line": 1,
+              "end_line": 8
+            }
+          ]
+        },
+        "hybrid": {
+          "source_hit": true,
+          "seconds": 0.04190429099253379,
+          "ranked_ids": [
+            12,
+            11,
+            25,
+            6,
+            23,
+            29,
+            30,
+            28,
+            31,
+            19,
+            8,
+            9,
+            20,
+            2
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/schema.sql",
+              "start_line": 1,
+              "end_line": 20
+            },
+            {
+              "path": "flaskr/db.py",
+              "start_line": 1,
+              "end_line": 56
+            },
+            {
+              "path": "tests/data.sql",
+              "start_line": 1,
+              "end_line": 8
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 51,
+              "end_line": 110
+            }
+          ]
+        }
+      },
+      "answer": {
+        "text": "The SQL schema creates two tables: `user` and `post`.",
+        "insufficient_evidence": false,
+        "timings": {
+          "lexical_seconds": 0.0009378749819006771,
+          "semantic_seconds": 0.03151274999254383,
+          "generation_seconds": 5.137926958996104,
+          "total_seconds": 5.261981040996034
+        }
+      },
+      "sources": [
+        {
+          "source_id": "S1",
+          "path": "flaskr/schema.sql",
+          "start_line": 1,
+          "end_line": 20
+        }
+      ],
+      "answer_error": null,
+      "human_review": null,
+      "source_review": {
+        "reviewer": "Codex source inspection; not a human review",
+        "facts_match_expected": true,
+        "expected_span_in_displayed_sources": true,
+        "result": "pass",
+        "note": "Compared answer with expected facts and original source. No unsupported production fact."
+      }
+    },
+    {
+      "id": "Q9",
+      "question": "Which public domain currently hosts the production deployment?",
+      "expected_path": null,
+      "expected_start": null,
+      "expected_end": null,
+      "expected_facts": "State that production domain is not established by retrieved evidence.",
+      "retrieval": {
+        "lexical": {
+          "source_hit": null,
+          "seconds": 0.0006883750029373914,
+          "ranked_ids": [
+            6,
+            7,
+            12,
+            10,
+            9,
+            22,
+            26,
+            23,
+            5,
+            28
+          ],
+          "final_sources": [
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 51,
+              "end_line": 110
+            },
+            {
+              "path": "flaskr/schema.sql",
+              "start_line": 1,
+              "end_line": 20
+            },
+            {
+              "path": "flaskr/blog.py",
+              "start_line": 101,
+              "end_line": 125
+            },
+            {
+              "path": "pyproject.toml",
+              "start_line": 1,
+              "end_line": 45
+            }
+          ]
+        },
+        "semantic": {
+          "source_hit": null,
+          "seconds": 0.048057207983219996,
+          "ranked_ids": [
+            3,
+            1,
+            2,
+            31,
+            23,
+            4,
+            8,
+            28,
+            30,
+            29
+          ],
+          "final_sources": [
+            {
+              "path": "README.rst",
+              "start_line": 51,
+              "end_line": 68
+            },
+            {
+              "path": "LICENSE.txt",
+              "start_line": 1,
+              "end_line": 28
+            },
+            {
+              "path": "tests/test_factory.py",
+              "start_line": 1,
+              "end_line": 12
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 1,
+              "end_line": 60
+            }
+          ]
+        },
+        "hybrid": {
+          "source_hit": null,
+          "seconds": 0.04874558298615739,
+          "ranked_ids": [
+            23,
+            28,
+            3,
+            6,
+            1,
+            7,
+            2,
+            12,
+            10,
+            31,
+            9,
+            4,
+            22,
+            8,
+            26,
+            5,
+            30,
+            29
+          ],
+          "final_sources": [
+            {
+              "path": "tests/conftest.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_blog.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "README.rst",
+              "start_line": 51,
+              "end_line": 68
+            },
+            {
+              "path": "flaskr/auth.py",
+              "start_line": 101,
+              "end_line": 116
+            }
+          ]
+        }
+      },
+      "answer": {
+        "text": "The provided evidence does not establish which public domain currently hosts the production deployment.",
+        "insufficient_evidence": true,
+        "timings": {
+          "lexical_seconds": 0.0006511250103358179,
+          "semantic_seconds": 0.02680841600522399,
+          "generation_seconds": 5.658082792011555,
+          "total_seconds": 5.765017458004877
+        }
+      },
+      "sources": [
+        {
+          "source_id": "S1",
+          "path": "tests/conftest.py",
+          "start_line": 1,
+          "end_line": 60
+        },
+        {
+          "source_id": "S2",
+          "path": "tests/test_blog.py",
+          "start_line": 1,
+          "end_line": 60
+        },
+        {
+          "source_id": "S3",
+          "path": "README.rst",
+          "start_line": 51,
+          "end_line": 68
+        },
+        {
+          "source_id": "S4",
+          "path": "flaskr/auth.py",
+          "start_line": 101,
+          "end_line": 116
+        }
+      ],
+      "answer_error": null,
+      "human_review": null,
+      "source_review": {
+        "reviewer": "Codex source inspection; not a human review",
+        "facts_match_expected": true,
+        "expected_span_in_displayed_sources": null,
+        "result": "pass",
+        "note": "Compared answer with expected facts and original source. No unsupported production fact."
+      }
+    },
+    {
+      "id": "Q10",
+      "question": "What is the production login endpoint's measured 95th-percentile response time?",
+      "expected_path": null,
+      "expected_start": null,
+      "expected_end": null,
+      "expected_facts": "State that measured production latency is not established by retrieved evidence.",
+      "retrieval": {
+        "lexical": {
+          "source_hit": null,
+          "seconds": 0.0007504169770982116,
+          "ranked_ids": [
+            28,
+            4,
+            29,
+            27,
+            31,
+            11,
+            23,
+            26,
+            7,
+            10
+          ],
+          "final_sources": [
+            {
+              "path": "tests/test_blog.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "flaskr/__init__.py",
+              "start_line": 1,
+              "end_line": 48
+            },
+            {
+              "path": "tests/test_blog.py",
+              "start_line": 51,
+              "end_line": 83
+            }
+          ]
+        },
+        "semantic": {
+          "source_hit": null,
+          "seconds": 0.05910341700655408,
+          "ranked_ids": [
+            28,
+            26,
+            27,
+            23,
+            24,
+            6,
+            3,
+            5,
+            11,
+            29
+          ],
+          "final_sources": [
+            {
+              "path": "tests/test_blog.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_auth.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 51,
+              "end_line": 62
+            },
+            {
+              "path": "README.rst",
+              "start_line": 51,
+              "end_line": 68
+            }
+          ]
+        },
+        "hybrid": {
+          "source_hit": null,
+          "seconds": 0.059853833983652294,
+          "ranked_ids": [
+            28,
+            27,
+            26,
+            23,
+            29,
+            11,
+            4,
+            24,
+            31,
+            6,
+            3,
+            5,
+            7,
+            10
+          ],
+          "final_sources": [
+            {
+              "path": "tests/test_blog.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_auth.py",
+              "start_line": 51,
+              "end_line": 69
+            },
+            {
+              "path": "tests/conftest.py",
+              "start_line": 1,
+              "end_line": 60
+            },
+            {
+              "path": "tests/test_factory.py",
+              "start_line": 1,
+              "end_line": 12
+            }
+          ]
+        }
+      },
+      "answer": {
+        "text": "The provided evidence does not contain information about the production login endpoint's measured 95th-percentile response time.",
+        "insufficient_evidence": true,
+        "timings": {
+          "lexical_seconds": 0.00057045798166655,
+          "semantic_seconds": 0.03325887498795055,
+          "generation_seconds": 4.998876041994663,
+          "total_seconds": 5.1198920420138165
+        }
+      },
+      "sources": [],
+      "answer_error": null,
+      "human_review": null,
+      "source_review": {
+        "reviewer": "Codex source inspection; not a human review",
+        "facts_match_expected": true,
+        "expected_span_in_displayed_sources": null,
+        "result": "pass",
+        "note": "Compared answer with expected facts and original source. No unsupported production fact."
+      }
+    }
+  ],
+  "corpus_provenance": {
+    "repository": "https://github.com/pallets/flask",
+    "revision": "ff6fa22f4d961a28567db11430208b964620f511",
+    "subtree": "examples/tutorial",
+    "recorded_by": "Codex after checking the vendored corpus and checksums"
+  },
+  "source_review_summary": {
+    "passed": 9,
+    "total": 10,
+    "human_review_pending": true
+  }
+}

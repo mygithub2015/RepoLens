@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repolens-local"
+version = "0.1.0"
+description = "Local repository Q&A with hybrid retrieval and inspectable sources"
+requires-python = ">=3.11,<3.13"
+license = {file = "LICENSE"}
+dependencies = [
+    "streamlit>=1.40,<2",
+    "httpx>=0.28,<1",
+    "pathspec>=0.12,<2",
+    "qdrant-client==1.19.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "uv>=0.8,<1"]
+
+[project.urls]
+Repository = "https://github.com/mygithub2015/RepoLens"
+Issues = "https://github.com/mygithub2015/RepoLens/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]
+addopts = "-m 'not live_models'"
+markers = ["live_models: opt-in checks requiring installed local Ollama models"]

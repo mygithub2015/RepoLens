@@ -1,0 +1,82 @@
+[
+  {
+    "id": "Q1",
+    "question": "Which function creates and configures the application?",
+    "expected_path": "flaskr/__init__.py",
+    "expected_start": 6,
+    "expected_end": 21,
+    "expected_facts": "create_app creates Flask and applies default and instance/test configuration."
+  },
+  {
+    "id": "Q2",
+    "question": "Where is `login_required` defined?",
+    "expected_path": "flaskr/auth.py",
+    "expected_start": 19,
+    "expected_end": 29,
+    "expected_facts": "The login_required decorator is defined in auth.py."
+  },
+  {
+    "id": "Q3",
+    "question": "Where does registration hash a password before storing the user?",
+    "expected_path": "flaskr/auth.py",
+    "expected_start": 66,
+    "expected_end": 69,
+    "expected_facts": "register calls generate_password_hash(password) in the INSERT parameters."
+  },
+  {
+    "id": "Q4",
+    "question": "Where is a submitted login password checked against its stored hash?",
+    "expected_path": "flaskr/auth.py",
+    "expected_start": 96,
+    "expected_end": 99,
+    "expected_facts": "login calls check_password_hash(user[\"password\"], password)."
+  },
+  {
+    "id": "Q5",
+    "question": "Which guard is applied to the route that creates a blog post?",
+    "expected_path": "flaskr/blog.py",
+    "expected_start": 60,
+    "expected_end": 62,
+    "expected_facts": "The create route is decorated with @login_required."
+  },
+  {
+    "id": "Q6",
+    "question": "How are posts ordered on the blog index page?",
+    "expected_path": "flaskr/blog.py",
+    "expected_start": 20,
+    "expected_end": 24,
+    "expected_facts": "ORDER BY created DESC, newest first."
+  },
+  {
+    "id": "Q7",
+    "question": "Which CLI command initializes the database?",
+    "expected_path": "flaskr/db.py",
+    "expected_start": 41,
+    "expected_end": 45,
+    "expected_facts": "init-db is the Click command implemented by init_db_command."
+  },
+  {
+    "id": "Q8",
+    "question": "Which tables does the SQL schema create?",
+    "expected_path": "flaskr/schema.sql",
+    "expected_start": 7,
+    "expected_end": 13,
+    "expected_facts": "The schema creates user and post."
+  },
+  {
+    "id": "Q9",
+    "question": "Which public domain currently hosts the production deployment?",
+    "expected_path": null,
+    "expected_start": null,
+    "expected_end": null,
+    "expected_facts": "State that production domain is not established by retrieved evidence."
+  },
+  {
+    "id": "Q10",
+    "question": "What is the production login endpoint's measured 95th-percentile response time?",
+    "expected_path": null,
+    "expected_start": null,
+    "expected_end": null,
+    "expected_facts": "State that measured production latency is not established by retrieved evidence."
+  }
+]

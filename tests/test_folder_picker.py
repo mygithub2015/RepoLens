@@ -1,6 +1,7 @@
 """Protect the boundary between a desktop chooser and repository selection."""
 
 import json
+import os
 from pathlib import Path
 import subprocess
 
@@ -14,11 +15,24 @@ def picker_module(monkeypatch, platform="darwin"):
     return folder_picker
 
 
+@pytest.mark.parametrize(
+    "folder_name",
+    [
+        "my 'repo' with spaces",
+        pytest.param(
+            'my "repo" with spaces',
+            marks=pytest.mark.skipif(
+                os.name == "nt",
+                reason="Windows does not allow double quotes in directory names",
+            ),
+        ),
+    ],
+)
 def test_mac_selection_preserves_spaces_quotes_and_uses_argument_list(
-    tmp_path, monkeypatch
+    tmp_path, monkeypatch, folder_name
 ):
     picker = picker_module(monkeypatch)
-    selected = tmp_path / 'my "repo" with spaces'
+    selected = tmp_path / folder_name
     selected.mkdir()
     calls = []
 
